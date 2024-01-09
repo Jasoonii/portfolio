@@ -1,0 +1,51 @@
+{
+  "skills": [
+    {
+      "id": "1",
+      "src": "./img/product-chain-1.png",
+      "title": "Front-End",
+      "description": "Working on multiple projects such as Reciply, and this Portfolio, I've honed my skills with the front end using React and HTML/CSS."
+    },
+    {
+      "id": "2",
+      "src": "./img/tag-1.png",
+      "title": "Back-End",
+      "description": "With my project 'Reciply' I worked heavily on the backend storing multiple user profiles and their data using MongoDB."
+    },
+    {
+      "id": "3",
+      "src": "./img/feather-pen-2.png",
+      "title": "Data Analytics",
+      "description": "From my experience working at AT&T as a Data Analyst Intern, I've learned how to look at data sets and deliver critical insights."
+    },
+    {
+      "id": "4",
+      "src": "./img/feather-pen-1.png",
+      "title": "Problem Solving",
+      "description": "Taking several rigurous courses throughout Univserity, I've learned to think about problems in a different way, coming up wih a solution."
+    }
+  ],
+  "portfolio": [
+    {
+      "id": "1",
+      "src": "./img/placeholder-image.png",
+      "title": "WrappedNow",
+      "description": "Website that implements the Spotify Web API, displaying a user's top songs and artists.",
+      "link": "https://github.com/Jasoonii"
+    },
+    {
+      "id": "2",
+      "src": "./img/placeholder-image-1.png",
+      "title": "Reciply",
+      "description": "A Recipe sharing social media platform.",
+      "link": "https://github.com/Jasoonii"
+    },
+    {
+      "id": "3",
+      "src": "./img/placeholder-image-2.png",
+      "title": "Portfolio Website",
+      "description": "This portfolio website! Allowed me to practice React showcasing my personal projects and myself to others.",
+      "link": "https://github.com/Jasoonii"
+    }
+  ]
+}
