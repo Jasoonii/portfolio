@@ -10,7 +10,7 @@ export default function AboutMe() {
           <p className="hero--section-description">
             Hey there, I'm Jason Dang - a Computer Science major currently
             studying at the University of Texas at Dallas. I made this portfolio to showcase some of the projects 
-            I've worked on in the past, and to showcase my character a bit better outside of a resume. 
+            I've worked on in the past, and to showcase my character a bit better outside of a resume.. 
           </p>
           <p className="hero--section-description">
             One of my hobbies are making food reviews on Instagram, I love being able to share my recommendations on
