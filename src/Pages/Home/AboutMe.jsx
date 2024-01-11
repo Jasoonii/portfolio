@@ -19,8 +19,9 @@ export default function AboutMe() {
             Follow me at @biteswithjasooni for a taste of my restaurant recommendations and foodie escapades.
           </p>
           <p className="hero--section-description">
-            I'm always looking for more opportunities to learn more and grow, and would love to apply my knowledge to any
-            internships.
+            Why computer science, you ask? For me, it's not just about writing lines of code - it's a journey of constant learning and growth.
+            I thrive on challenges and am always on the lookout for opportunities to expand my knowledge. 
+            If you have an exciting project or internship that could use my skills, count me in!
           </p>
         </div>
       </div>
