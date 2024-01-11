@@ -8,9 +8,10 @@ export default function AboutMe() {
         <div className="hero--section--content">
           <h1 className="skills-section--heading">About Me</h1>
           <p className="hero--section-description">
-            Hey there, I'm Jason Dang - a Computer Science major currently
-            studying at the University of Texas at Dallas. I made this portfolio to showcase some of the projects 
-            I've worked on in the past, and to showcase my character a bit better outside of a resume.
+            Hey there! I'm Jason Dang, a passionate Computer Science major currently
+            immersed in the world of code at the University of Texas at Dallas. 
+            Welcome to my digital space, where I've crafted a portfolio to offer
+            you a glimpse into the projects that fuel my curiosity and drive.
           </p>
           <p className="hero--section-description">
             One of my hobbies are making food reviews on Instagram, I love being able to share my recommendations on
