@@ -14,8 +14,9 @@ export default function AboutMe() {
             you a glimpse into the projects that fuel my curiosity and drive.
           </p>
           <p className="hero--section-description">
-            One of my hobbies are making food reviews on Instagram, I love being able to share my recommendations on
-            restaurants. @biteswithjasooni
+            Beyond the realm of algorithms and programming languages, you'll find a different side of me. 
+            I have a knack for exploring the culinary world and expressing my gastronomic adventures through food reviews on Instagram. 
+            Follow me at @biteswithjasooni for a taste of my restaurant recommendations and foodie escapades.
           </p>
           <p className="hero--section-description">
             I'm always looking for more opportunities to learn more and grow, and would love to apply my knowledge to any
