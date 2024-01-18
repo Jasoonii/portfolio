@@ -2,25 +2,25 @@
   "skills": [
     {
       "id": "1",
-      "src": "./img/product-chain-1.png",
+      "src": "./img/frontend-icon.png",
       "title": "Front-End",
       "description": "Working on multiple projects such as Reciply, and this Portfolio, I've honed my skills with the front end using React and HTML/CSS."
     },
     {
       "id": "2",
-      "src": "./img/tag-1.png",
+      "src": "./img/backend-icon.png",
       "title": "Back-End",
       "description": "With my project 'Reciply' I worked heavily on the backend storing multiple user profiles and their data using MongoDB."
     },
     {
       "id": "3",
-      "src": "./img/feather-pen-2.png",
+      "src": "./img/dataanalytics-icon.png",
       "title": "Data Analytics",
       "description": "From my experience working at AT&T as a Data Analyst Intern, I've learned how to look at data sets and deliver critical insights."
     },
     {
       "id": "4",
-      "src": "./img/feather-pen-1.png",
+      "src": "./img/problemsolving-icon.png",
       "title": "Problem Solving",
       "description": "Taking several rigurous courses throughout Univserity, I've learned to think about problems in a different way, coming up wih a solution."
     }
