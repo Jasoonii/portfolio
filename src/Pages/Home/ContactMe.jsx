@@ -11,22 +11,12 @@ export default function ContactMe() {
       <form className="contact--form--container">
         <div className="container">
           <label htmlFor="first-name" className="contact--label">
-            <span className="text-md">First Name</span>
+            <span className="text-md">Name</span>
             <input
               type="text"
               className="contact--input text-md"
-              name="first-name"
-              id="first-name"
-              required
-            />
-          </label>
-          <label htmlFor="last-name" className="contact--label">
-            <span className="text-md">Last Name</span>
-            <input
-              type="text"
-              className="contact--input text-md"
-              name="last-name"
-              id="last-name"
+              name="name"
+              id="fullName"
               required
             />
           </label>
@@ -36,17 +26,7 @@ export default function ContactMe() {
               type="email"
               className="contact--input text-md"
               name="email"
-              id="email"
-              required
-            />
-          </label>
-          <label htmlFor="phone-number" className="contact--label">
-            <span className="text-md">phone-number</span>
-            <input
-              type="number"
-              className="contact--input text-md"
-              name="phone-number"
-              id="phone-number"
+              id="emailID"
               required
             />
           </label>
