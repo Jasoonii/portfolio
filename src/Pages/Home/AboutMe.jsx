@@ -9,19 +9,18 @@ export default function AboutMe() {
           <h1 className="skills-section--heading">About Me</h1>
           <p className="hero--section-description">
             Hey there! I'm Jason Dang, a passionate Computer Science major currently
-            immersed in the world of code at the University of Texas at Dallas. 
+            studying at the University of Texas at Dallas. 
             Welcome to my digital space, where I've crafted a portfolio to offer
-            you a glimpse into the projects that fuel my curiosity and drive.
+            you a glimpse into my projects and work experience.
           </p>
           <p className="hero--section-description">
             Beyond the realm of algorithms and programming languages, you'll find a different side of me. 
-            I have a knack for exploring the culinary world and expressing my gastronomic adventures through food reviews on Instagram. 
-            Follow me at @biteswithjasooni for a taste of my restaurant recommendations and foodie escapades.
+            I have a love for eating and expressing my food adventures through food reviews on Instagram. 
+            Follow me at @biteswithjasooni for a taste of my restaurant recommendations and food adventures.
           </p>
           <p className="hero--section-description">
             Why computer science, you ask? For me, it's not just about writing lines of code - it's a journey of constant learning and growth.
-            I thrive on challenges and am always on the lookout for opportunities to expand my knowledge. 
-            If you have an exciting project or internship that could use my skills, count me in!
+            I love the feeling of problem solving and am always up for a challenge!
           </p>
         </div>
       </div>
