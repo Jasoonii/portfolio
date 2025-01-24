@@ -30,15 +30,15 @@
       "id": "1",
       "src": "./img/placeholder-image.png",
       "title": "WrappedNow",
-      "description": "Website that implements the Spotify Web API, displaying a user's top songs and artists.",
+      "description": "Service that implements the Spotify Web API, displaying a user's top songs and artists.",
       "link": "https://wrappednow.netlify.app/"
     },
     {
       "id": "2",
       "src": "./img/placeholder-image-1.png",
-      "title": "Reciply",
-      "description": "A Recipe sharing social media platform.",
-      "link": "https://github.com/Jasoonii"
+      "title": "UniFi",
+      "description": "A banking service for individuals without access to traditional banking needs. Created in a hackathon for Goldman Sachs.",
+      "link": "https://devpost.com/software/unifi-ka9582"
     },
     {
       "id": "3",
