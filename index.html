@@ -1,194 +1,265 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Portfolio</title>
-<link rel="preconnect" href="https://fonts.googleapis.com" />
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet" />
-<link rel="stylesheet" href="styles.css" />
-</head>
-<body>
-  <div class="nav-wrap" id="navWrap" data-screen-label="Navbar">
-    <span id="top" aria-hidden="true"></span>
-    <nav class="navbar" aria-label="Primary">
-      <a href="#top" class="brand" aria-label="Back to top">
-        <span>JD</span>
-      </a>
-      <ul class="nav-links">
-        <li><a href="#about">about me</a></li>
-        <li><a href="#resume">resume</a></li>
-      </ul>
-      <a href="#contact" class="nav-cta">contact me</a>
-    </nav>
-  </div>
-
-  <main>
-    <div class="hero-section">
-      <h1 class="hero">
-        <span class="hero-line">im <span class="hl hl-blue caps">jason dang</span></span>
-        <span class="hero-line">a 10x</span>
-        <span class="hero-line">software</span>
-        <span class="hero-line"><span class="hl hl-red caps">engineer</span></span>
-      </h1>
-      <div class="headshot-wrap">
-        <img class="headshot" src="assets/headshot.jpg" alt="Jason Dang headshot" />
-      </div>
-    </div>
-
-    <section class="about" id="about" data-screen-label="About">
-      <div class="about-eyebrow" aria-hidden="true">
-        <span class="dash"></span>
-      </div>
-      <h2 class="about-title">a little <span class="accent">about</span> who i am</h2>
-      <div class="about-grid">
-        <div class="about-body">
-          <p>im a software engineer with a degree in computer science from <strong>ut dallas</strong>. i spent time building at <strong>paycom</strong> as a <strong>software engineer</strong> and worked as an <strong>ai engineer</strong> and <strong>data analyst</strong> at <strong>at&amp;t</strong>. the best part of the job for me is the challenge. i love that moment of solving a problem after being stuck on it for a while.</p>
-          <p>when im not at my desk, im travelling the world with my camera. i love <strong>videography</strong> and record <strong>cinematic vlogs</strong> of wherever i travel to. im also a huge foodie and will travel the world just to try a viral restaurant i see on social media. if you want to see some of my videos check out my <a href="https://www.youtube.com/@jasonddang" target="_blank" rel="noopener noreferrer"><svg class="yt-icon" viewBox="0 0 24 24" aria-hidden="true"><path fill="#FF0000" d="M23.5 6.2a3 3 0 0 0-2.1-2.12C19.6 3.6 12 3.6 12 3.6s-7.6 0-9.4.48A3 3 0 0 0 .5 6.2 31.4 31.4 0 0 0 0 12a31.4 31.4 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.12C4.4 20.4 12 20.4 12 20.4s7.6 0 9.4-.48a3 3 0 0 0 2.1-2.12A31.4 31.4 0 0 0 24 12a31.4 31.4 0 0 0-.5-5.8z"/><path fill="#ffffff" d="M9.6 15.6V8.4l6.3 3.6-6.3 3.6z"/></svg><span>youtube!</span></a></p>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Portfolio</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap"
+            rel="stylesheet"
+        />
+        <link rel="stylesheet" href="styles.css" />
+    </head>
+    <body>
+        <div class="nav-wrap" id="navWrap" data-screen-label="Navbar">
+            <span id="top" aria-hidden="true"></span>
+            <nav class="navbar" aria-label="Primary">
+                <a href="#top" class="brand" aria-label="Back to top">
+                    <span>JD</span>
+                </a>
+                <ul class="nav-links">
+                    <li><a href="#about">about me</a></li>
+                    <li><a href="#resume">resume</a></li>
+                </ul>
+                <a href="#contact" class="nav-cta">contact me</a>
+            </nav>
         </div>
-        <aside class="about-card">
-          <h3>quick facts</h3>
-          <dl>
-            <dt>based in</dt><dd>dallas, tx</dd>
-            <dt>focus</dt><dd>ai &amp; full-stack</dd>
-            <dt>currently</dt><dd>funemployed</dd>
-          </dl>
-        </aside>
-      </div>
-    </section>
 
-    <section class="resume" id="resume" data-screen-label="Resume">
-      <div class="about-eyebrow" aria-hidden="true">
-        <span class="dash"></span>
-      </div>
-      <div class="resume-head">
-        <h2 class="resume-title">my <span class="accent">resume</span></h2>
-        <div class="resume-actions">
-          <a class="resume-btn ghost" href="assets/Jason_Dang_Resume.pdf" target="_blank" rel="noopener noreferrer">open in new tab</a>
-          <a class="resume-btn" href="assets/Jason_Dang_Resume.pdf" download="Jason_Dang_Resume.pdf">download pdf</a>
-        </div>
-      </div>
-      <div class="resume-frame-wrap">
-        <iframe class="resume-frame" src="assets/Jason_Dang_Resume.pdf#view=FitH" title="Jason Dang resume"></iframe>
-      </div>
-    </section>
-
-    <section class="contact" id="contact" data-screen-label="Contact">
-      <div class="about-eyebrow" aria-hidden="true">
-        <span class="dash"></span>
-      </div>
-      <div class="contact-grid">
-        <div>
-          <h2 class="contact-title">lets <span class="accent">build</span> something</h2>
-          <p class="contact-lede">have a project in mind, want to chat about engineering, or just want to swap restaurant recs? drop me a line below.</p>
-          <form class="contact-form" id="contactForm" novalidate>
-            <div class="form-row">
-              <div class="field">
-                <label for="cf-name">name</label>
-                <input id="cf-name" name="name" type="text" placeholder="your name" required />
-              </div>
-              <div class="field">
-                <label for="cf-email">email</label>
-                <input id="cf-email" name="email" type="email" placeholder="you@example.com" required />
-              </div>
+        <main>
+            <div class="hero-section">
+                <h1 class="hero">
+                    <span class="hero-line">im <span class="hl hl-blue caps">jason dang</span></span>
+                    <span class="hero-line">a 10x</span>
+                    <span class="hero-line">software</span>
+                    <span class="hero-line"><span class="hl hl-red caps">engineer</span></span>
+                </h1>
+                <div class="headshot-wrap">
+                    <img class="headshot" src="assets/headshot.jpg" alt="Jason Dang headshot" />
+                </div>
             </div>
-            <div class="field">
-              <label for="cf-subject">subject</label>
-              <input id="cf-subject" name="subject" type="text" placeholder="whats this about" />
-            </div>
-            <div class="field">
-              <label for="cf-message">message</label>
-              <textarea id="cf-message" name="message" placeholder="tell me a bit about what youre working on..." required></textarea>
-            </div>
-            <button class="form-submit" type="submit">send message</button>
-            <div class="form-status" id="cf-status" role="status" aria-live="polite"></div>
-          </form>
-        </div>
-        <aside class="contact-card">
-          <h3>find me elsewhere</h3>
-          <ul class="contact-list">
-            <li><a href="https://www.linkedin.com/in/jasonddang" target="_blank" rel="noopener noreferrer"><span><span class="label">in /</span>linkedin</span><span class="arrow">→</span></a></li>
-            <li><a href="https://github.com/Jasoonii" target="_blank" rel="noopener noreferrer"><span><span class="label">gh /</span>github</span><span class="arrow">→</span></a></li>
-            <li><a href="https://www.youtube.com/@jasonddang" target="_blank" rel="noopener noreferrer"><span><span class="label">yt /</span>youtube</span><span class="arrow">→</span></a></li>
-          </ul>
-        </aside>
-      </div>
-    </section>
-  </main>
 
-  <script>
-    // shrink the navbar after a small scroll threshold
-    (function () {
-      var nav = document.getElementById('navWrap');
-      var THRESHOLD = 40;
-      var ticking = false;
+            <section class="about" id="about" data-screen-label="About">
+                <div class="about-eyebrow" aria-hidden="true">
+                    <span class="dash"></span>
+                </div>
+                <h2 class="about-title">a little <span class="accent">about</span> who i am</h2>
+                <div class="about-grid">
+                    <div class="about-body">
+                        <p>
+                            im a software engineer with a degree in computer science from <strong>ut dallas</strong>. i
+                            spent time building at <strong>paycom</strong> as a <strong>software engineer</strong> and
+                            worked as an <strong>ai engineer</strong> and <strong>data analyst</strong> at
+                            <strong>at&amp;t</strong>. the best part of the job for me is the challenge. i love that
+                            moment of solving a problem after being stuck on it for a while.
+                        </p>
+                        <p>
+                            when im not at my desk, im travelling the world with my camera. i love
+                            <strong>videography</strong> and record <strong>cinematic vlogs</strong> of wherever i
+                            travel to. im also a huge foodie and will travel the world just to try a viral restaurant i
+                            see on social media. if you want to see some of my videos check out my
+                            <a href="https://www.youtube.com/@jasonddang" target="_blank" rel="noopener noreferrer"
+                                ><svg class="yt-icon" viewBox="0 0 24 24" aria-hidden="true">
+                                    <path
+                                        fill="#FF0000"
+                                        d="M23.5 6.2a3 3 0 0 0-2.1-2.12C19.6 3.6 12 3.6 12 3.6s-7.6 0-9.4.48A3 3 0 0 0 .5 6.2 31.4 31.4 0 0 0 0 12a31.4 31.4 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.12C4.4 20.4 12 20.4 12 20.4s7.6 0 9.4-.48a3 3 0 0 0 2.1-2.12A31.4 31.4 0 0 0 24 12a31.4 31.4 0 0 0-.5-5.8z"
+                                    />
+                                    <path fill="#ffffff" d="M9.6 15.6V8.4l6.3 3.6-6.3 3.6z" /></svg
+                                ><span>youtube!</span></a
+                            >
+                        </p>
+                    </div>
+                    <aside class="about-card">
+                        <h3>quick facts</h3>
+                        <dl>
+                            <dt>based in</dt>
+                            <dd>dallas, tx</dd>
+                            <dt>focus</dt>
+                            <dd>ai &amp; full-stack</dd>
+                            <dt>currently</dt>
+                            <dd>funemployed</dd>
+                        </dl>
+                    </aside>
+                </div>
+            </section>
 
-      function update() {
-        if (window.scrollY > THRESHOLD) {
-          nav.classList.add('is-scrolled');
-        } else {
-          nav.classList.remove('is-scrolled');
-        }
-        ticking = false;
-      }
+            <section class="resume" id="resume" data-screen-label="Resume">
+                <div class="about-eyebrow" aria-hidden="true">
+                    <span class="dash"></span>
+                </div>
+                <div class="resume-head">
+                    <h2 class="resume-title">my <span class="accent">resume</span></h2>
+                    <div class="resume-actions">
+                        <a
+                            class="resume-btn ghost"
+                            href="assets/Jason_Dang_Resume.pdf"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            >open in new tab</a
+                        >
+                        <a class="resume-btn" href="assets/Jason_Dang_Resume.pdf" download="Jason_Dang_Resume.pdf"
+                            >download pdf</a
+                        >
+                    </div>
+                </div>
+                <div class="resume-frame-wrap">
+                    <iframe
+                        class="resume-frame"
+                        src="assets/Jason_Dang_Resume.pdf#view=FitH"
+                        title="Jason Dang resume"
+                    ></iframe>
+                </div>
+            </section>
 
-      window.addEventListener('scroll', function () {
-        if (!ticking) {
-          window.requestAnimationFrame(update);
-          ticking = true;
-        }
-      }, { passive: true });
+            <section class="contact" id="contact" data-screen-label="Contact">
+                <div class="about-eyebrow" aria-hidden="true">
+                    <span class="dash"></span>
+                </div>
+                <div class="contact-grid">
+                    <div>
+                        <h2 class="contact-title">lets <span class="accent">build</span> something</h2>
+                        <p class="contact-lede">
+                            have a project in mind, want to chat about engineering, or just want to swap restaurant
+                            recs? drop me a line below.
+                        </p>
+                        <form class="contact-form" id="contactForm" novalidate>
+                            <div class="form-row">
+                                <div class="field">
+                                    <label for="cf-name">name</label>
+                                    <input id="cf-name" name="name" type="text" placeholder="your name" required />
+                                </div>
+                                <div class="field">
+                                    <label for="cf-email">email</label>
+                                    <input
+                                        id="cf-email"
+                                        name="email"
+                                        type="email"
+                                        placeholder="you@example.com"
+                                        required
+                                    />
+                                </div>
+                            </div>
+                            <div class="field">
+                                <label for="cf-subject">subject</label>
+                                <input id="cf-subject" name="subject" type="text" placeholder="whats this about" />
+                            </div>
+                            <div class="field">
+                                <label for="cf-message">message</label>
+                                <textarea
+                                    id="cf-message"
+                                    name="message"
+                                    placeholder="tell me a bit about what youre working on..."
+                                    required
+                                ></textarea>
+                            </div>
+                            <button class="form-submit" type="submit">send message</button>
+                            <div class="form-status" id="cf-status" role="status" aria-live="polite"></div>
+                        </form>
+                    </div>
+                    <aside class="contact-card">
+                        <h3>find me elsewhere</h3>
+                        <ul class="contact-list">
+                            <li>
+                                <a
+                                    href="https://www.linkedin.com/in/jasonddang"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    ><span><span class="label">in /</span>linkedin</span><span class="arrow">→</span></a
+                                >
+                            </li>
+                            <li>
+                                <a href="https://github.com/Jasoonii" target="_blank" rel="noopener noreferrer"
+                                    ><span><span class="label">gh /</span>github</span><span class="arrow">→</span></a
+                                >
+                            </li>
+                            <li>
+                                <a href="https://www.youtube.com/@jasonddang" target="_blank" rel="noopener noreferrer"
+                                    ><span><span class="label">yt /</span>youtube</span><span class="arrow">→</span></a
+                                >
+                            </li>
+                        </ul>
+                    </aside>
+                </div>
+            </section>
+        </main>
 
-      update();
-    })();
+        <script>
+            // shrink the navbar after a small scroll threshold
+            (function () {
+                var nav = document.getElementById("navWrap");
+                var THRESHOLD = 40;
+                var ticking = false;
 
-    // smooth scroll for in-page nav links
-    document.querySelectorAll('.nav-links a[href^="#"], .nav-cta[href^="#"]').forEach(function (link) {
-      link.addEventListener('click', function (e) {
-        var id = link.getAttribute('href').slice(1);
-        var target = document.getElementById(id);
-        if (!target) return;
-        e.preventDefault();
-        var top = target.getBoundingClientRect().top + window.scrollY - 110;
-        window.scrollTo({ top: top, behavior: 'smooth' });
-      });
-    });
+                function update() {
+                    if (window.scrollY > THRESHOLD) {
+                        nav.classList.add("is-scrolled");
+                    } else {
+                        nav.classList.remove("is-scrolled");
+                    }
+                    ticking = false;
+                }
 
-    // contact form (front-end only — wire up to a backend like formspree/resend on deploy)
-    var form = document.getElementById('contactForm');
-    if (form) {
-      var status = document.getElementById('cf-status');
-      form.addEventListener('submit', function (e) {
-        e.preventDefault();
-        var name = form.querySelector('#cf-name').value.trim();
-        var email = form.querySelector('#cf-email').value.trim();
-        var msg = form.querySelector('#cf-message').value.trim();
-        if (!name || !email || !msg) {
-          status.style.color = '#b04a3e';
-          status.textContent = 'please fill in name, email, and message.';
-          return;
-        }
-        var btn = form.querySelector('.form-submit');
-        btn.disabled = true;
-        btn.textContent = 'sending...';
-        setTimeout(function () {
-          form.reset();
-          btn.disabled = false;
-          btn.textContent = 'send message';
-          status.style.color = '';
-          status.textContent = 'thanks ' + name.split(' ')[0] + '! ill get back to you soon.';
-        }, 700);
-      });
-    }
+                window.addEventListener(
+                    "scroll",
+                    function () {
+                        if (!ticking) {
+                            window.requestAnimationFrame(update);
+                            ticking = true;
+                        }
+                    },
+                    { passive: true },
+                );
 
-    // smooth scroll to top when JD logo is clicked
-    document.querySelectorAll('a.brand').forEach(function (el) {
-      el.addEventListener('click', function (e) {
-        e.preventDefault();
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-      });
-    });
-  </script>
-</body>
+                update();
+            })();
+
+            // smooth scroll for in-page nav links
+            document.querySelectorAll('.nav-links a[href^="#"], .nav-cta[href^="#"]').forEach(function (link) {
+                link.addEventListener("click", function (e) {
+                    var id = link.getAttribute("href").slice(1);
+                    var target = document.getElementById(id);
+                    if (!target) return;
+                    e.preventDefault();
+                    var top = target.getBoundingClientRect().top + window.scrollY - 110;
+                    window.scrollTo({ top: top, behavior: "smooth" });
+                });
+            });
+
+            // contact form (front-end only — wire up to a backend like formspree/resend on deploy)
+            var form = document.getElementById("contactForm");
+            if (form) {
+                var status = document.getElementById("cf-status");
+                form.addEventListener("submit", function (e) {
+                    e.preventDefault();
+                    var name = form.querySelector("#cf-name").value.trim();
+                    var email = form.querySelector("#cf-email").value.trim();
+                    var msg = form.querySelector("#cf-message").value.trim();
+                    if (!name || !email || !msg) {
+                        status.style.color = "#b04a3e";
+                        status.textContent = "please fill in name, email, and message.";
+                        return;
+                    }
+                    var btn = form.querySelector(".form-submit");
+                    btn.disabled = true;
+                    btn.textContent = "sending...";
+                    setTimeout(function () {
+                        form.reset();
+                        btn.disabled = false;
+                        btn.textContent = "send message";
+                        status.style.color = "";
+                        status.textContent = "thanks " + name.split(" ")[0] + "! ill get back to you soon.";
+                    }, 700);
+                });
+            }
+
+            // smooth scroll to top when JD logo is clicked
+            document.querySelectorAll("a.brand").forEach(function (el) {
+                el.addEventListener("click", function (e) {
+                    e.preventDefault();
+                    window.scrollTo({ top: 0, behavior: "smooth" });
+                });
+            });
+        </script>
+    </body>
 </html>
