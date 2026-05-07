@@ -1,0 +1,901 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Portfolio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --cream: #fdf8ec;             /* page background */
+    --hl-blue: #6fa8e6;
+    --hl-red:  #e87a6f;
+    --ink: #2b2a26;
+    --ink-soft: #4a4740;
+    --matcha: #7a9a6a;             /* matcha green border */
+    --matcha-deep: #4a6840;        /* darker matcha for navbar fill */
+    --matcha-darker: #3b5432;      /* hover on cta */
+    --matcha-soft: rgba(122, 154, 106, 0.14);
+  }
+
+  * { box-sizing: border-box; }
+
+  html, body {
+    margin: 0;
+    padding: 0;
+    background: var(--cream);
+    color: var(--ink);
+    font-family: 'Roboto', -apple-system, BlinkMacSystemFont, sans-serif;
+    min-height: 100vh;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-transform: lowercase;
+    scroll-behavior: smooth;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  /* subtle paper grain so the cream feels warm, not flat */
+  body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    background-image:
+      radial-gradient(rgba(122, 92, 40, 0.05) 1px, transparent 1px),
+      radial-gradient(rgba(122, 92, 40, 0.04) 1px, transparent 1px);
+    background-size: 3px 3px, 7px 7px;
+    background-position: 0 0, 1px 2px;
+    opacity: 0.6;
+    z-index: 0;
+  }
+
+  /* ---------- NAVBAR ---------- */
+  .nav-wrap {
+    width: 80%;
+    max-width: 1200px;
+    margin: 28px auto 0;
+    position: sticky;
+    top: 24px;
+    z-index: 10;
+    transition: width 600ms cubic-bezier(0.22, 1, 0.36, 1),
+                max-width 600ms cubic-bezier(0.22, 1, 0.36, 1);
+    will-change: width;
+  }
+
+  /* shrunk state — applied on scroll */
+  .nav-wrap.is-scrolled {
+    width: 55%;
+    max-width: 860px;
+  }
+
+  .navbar {
+    width: 100%;
+    background: var(--matcha-deep);
+    border: 3px solid #ffffff;
+    border-radius: 14px;
+    padding: 12px 16px 12px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    box-shadow:
+      0 1px 0 rgba(255, 255, 255, 0.06) inset,
+      0 12px 28px -18px rgba(59, 84, 50, 0.55);
+    transition: padding 600ms cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  .nav-wrap.is-scrolled .navbar {
+    padding: 9px 12px 9px 20px;
+  }
+
+  .brand {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: 700;
+    font-size: 18px;
+    letter-spacing: 0.4px;
+    color: #ffffff;
+    text-decoration: none;
+    border-radius: 50%;
+    border: 1.5px solid transparent;
+    cursor: pointer;
+    text-transform: none;
+    transition: border-color 160ms ease, color 160ms ease, background 160ms ease;
+  }
+
+  .brand:hover {
+    color: #c8e0b8;
+    border-color: #ffffff;
+  }
+
+  .brand-dot {
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    background: var(--matcha);
+    box-shadow: 0 0 0 3px rgba(122, 154, 106, 0.25);
+  }
+
+  .nav-links {
+    display: flex;
+    align-items: center;
+    gap: 2px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .nav-links a {
+    display: inline-flex;
+    align-items: center;
+    padding: 8px 16px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    color: #ffffff;
+    text-decoration: none;
+    border-radius: 8px;
+    border: 1px solid transparent;
+    transition: color 160ms ease, background 160ms ease;
+    white-space: nowrap;
+  }
+
+  .nav-links a:hover {
+    color: #c8e0b8;
+    background: rgba(255, 255, 255, 0.05);
+  }
+
+  .nav-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 8px 18px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--matcha-deep);
+    background: var(--cream);
+    border: 1px solid var(--cream);
+    border-radius: 8px;
+    text-decoration: none;
+    transition: background 160ms ease, border-color 160ms ease, color 160ms ease;
+  }
+
+  .nav-cta:hover {
+    background: #ffffff;
+    border-color: #ffffff;
+    color: var(--matcha-darker);
+  }
+
+  /* ---------- BLANK CANVAS ---------- */
+  main {
+    width: 80%;
+    max-width: 1200px;
+    flex: 1;
+    position: relative;
+    z-index: 1;
+    padding: 80px 0 200px;
+  }
+
+  .placeholder {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+    font-size: 13px;
+    letter-spacing: 0.18em;
+    color: rgba(43, 42, 38, 0.4);
+  }
+
+  /* ---------- HERO ---------- */
+  .hero-section {
+    margin-top: 64px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 48px;
+    width: 100%;
+  }
+
+  .hero {
+    width: 50%;
+    max-width: 50%;
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 900;
+    font-size: clamp(34px, 4.6vw, 72px);
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+    color: #000000;
+    text-transform: lowercase;
+    display: flex;
+    flex-direction: column;
+    gap: 0.06em;
+  }
+
+  .hero-line {
+    display: block;
+    white-space: nowrap;
+  }
+
+  .headshot-wrap {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .headshot {
+    width: clamp(220px, 26vw, 380px);
+    aspect-ratio: 1 / 1;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: center 22%;
+    background: #ffffff;
+    border: 3px solid #ffffff;
+    box-shadow: 0 18px 40px -22px rgba(59, 84, 50, 0.45);
+  }
+
+  .hero .hl {
+    display: inline-block;
+    padding: 0.04em 0.18em;
+    border-radius: 6px;
+    color: #ffffff;
+  }
+
+  .hero .hl-blue { background: var(--hl-blue); }
+  .hero .hl-red  { background: var(--hl-red); }
+
+  /* keep the proper-noun + the noun in their original casing per the copy */
+  .hero .caps { text-transform: uppercase; }
+
+  /* ---------- ABOUT ---------- */
+  .about {
+    margin-top: 160px;
+    scroll-margin-top: 120px;
+    width: 100%;
+  }
+
+  .about-eyebrow {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 18px;
+  }
+
+  .about-eyebrow .dash {
+    width: 36px;
+    height: 2px;
+    background: var(--matcha);
+    border-radius: 2px;
+    flex-shrink: 0;
+  }
+
+  .about-title {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 900;
+    font-size: clamp(34px, 4.6vw, 64px);
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+    color: #000000;
+    margin: 0 0 40px;
+  }
+
+  .about-title .accent {
+    font-family: 'Times New Roman', Times, serif;
+    font-style: italic;
+    font-weight: 400;
+    color: var(--matcha-deep);
+  }
+
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1.4fr 1fr;
+    gap: 56px;
+    align-items: start;
+  }
+
+  .about-body {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    font-size: 17px;
+    line-height: 1.7;
+    color: var(--ink-soft);
+  }
+
+  .about-body strong {
+    font-weight: 700;
+    color: #000000;
+  }
+
+  .about-body a {
+    display: inline-flex;
+    align-items: baseline;
+    gap: 6px;
+    color: #000000;
+    background: transparent;
+    padding: 0;
+    font-weight: 700;
+    text-decoration: none;
+    transition: color 160ms ease;
+  }
+
+  .about-body a:hover {
+    color: var(--matcha-deep);
+  }
+
+  .yt-icon {
+    width: 0.95em;
+    height: 0.95em;
+    align-self: center;
+    flex-shrink: 0;
+  }
+
+  .about-body p { margin: 0 0 18px; }
+  .about-body p:last-child { margin-bottom: 0; }
+
+  .about-card {
+    background: var(--matcha-deep);
+    border: 3px solid #ffffff;
+    border-radius: 14px;
+    padding: 28px 28px 24px;
+    color: #ffffff;
+    box-shadow: 0 18px 40px -22px rgba(59, 84, 50, 0.45);
+  }
+
+  .about-card h3 {
+    font-family: 'Times New Roman', Times, serif;
+    font-style: italic;
+    font-weight: 400;
+    font-size: 18px;
+    margin: 0 0 16px;
+    text-transform: none;
+    color: #c8e0b8;
+  }
+
+  .about-card dl {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 10px 18px;
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+  }
+
+  .about-card dt {
+    font-weight: 700;
+    font-size: 13px;
+    letter-spacing: 0.04em;
+    color: rgba(255, 255, 255, 0.65);
+  }
+
+  .about-card dd {
+    margin: 0;
+    font-weight: 500;
+    font-size: 15px;
+    color: #ffffff;
+  }
+
+  @media (max-width: 860px) {
+    .about-grid { grid-template-columns: 1fr; gap: 32px; }
+  }
+
+  /* ---------- RESUME ---------- */
+  .resume {
+    margin-top: 160px;
+    scroll-margin-top: 120px;
+    width: 100%;
+  }
+
+  .resume-head {
+    display: flex;
+    align-items: end;
+    justify-content: space-between;
+    gap: 24px;
+    margin-bottom: 32px;
+    flex-wrap: wrap;
+  }
+
+  .resume-title {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 900;
+    font-size: clamp(34px, 4.6vw, 64px);
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+    color: #000000;
+    margin: 0;
+  }
+
+  .resume-title .accent {
+    font-family: 'Times New Roman', Times, serif;
+    font-style: italic;
+    font-weight: 400;
+    color: var(--matcha-deep);
+  }
+
+  .resume-actions {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+  }
+
+  .resume-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 18px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    color: #ffffff;
+    background: var(--matcha);
+    border: 1px solid var(--matcha);
+    border-radius: 8px;
+    text-decoration: none;
+    text-transform: lowercase;
+    transition: background 160ms ease, border-color 160ms ease;
+  }
+
+  .resume-btn:hover {
+    background: var(--matcha-darker);
+    border-color: var(--matcha-darker);
+  }
+
+  .resume-btn.ghost {
+    color: var(--matcha-deep);
+    background: transparent;
+    border-color: var(--matcha);
+  }
+
+  .resume-btn.ghost:hover {
+    background: var(--matcha-soft);
+    color: var(--matcha-deep);
+  }
+
+  .resume-frame-wrap {
+    border: 3px solid var(--matcha);
+    border-radius: 14px;
+    background: #ffffff;
+    overflow: hidden;
+    box-shadow: 0 18px 40px -22px rgba(59, 84, 50, 0.45);
+  }
+
+  .resume-frame {
+    display: block;
+    width: 100%;
+    height: 1100px;
+    border: 0;
+    background: #ffffff;
+  }
+
+  @media (max-width: 720px) {
+    .resume-frame { height: 720px; }
+  }
+
+  /* ---------- CONTACT ---------- */
+  .contact {
+    margin-top: 160px;
+    scroll-margin-top: 120px;
+    width: 100%;
+  }
+
+  .contact-grid {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 56px;
+    align-items: start;
+    margin-top: 32px;
+  }
+
+  .contact-title {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 900;
+    font-size: clamp(34px, 4.6vw, 64px);
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+    color: #000000;
+    margin: 0 0 16px;
+  }
+
+  .contact-title .accent {
+    font-family: 'Times New Roman', Times, serif;
+    font-style: italic;
+    font-weight: 400;
+    color: var(--matcha-deep);
+  }
+
+  .contact-lede {
+    font-family: 'Roboto', sans-serif;
+    font-size: 17px;
+    line-height: 1.6;
+    color: var(--ink-soft);
+    margin: 0 0 24px;
+  }
+
+  .contact-email {
+    display: inline-flex;
+    align-items: center;
+    padding: 12px 22px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 15px;
+    font-weight: 700;
+    color: #ffffff;
+    background: var(--matcha);
+    border: 1px solid var(--matcha);
+    border-radius: 10px;
+    text-decoration: none;
+    text-transform: lowercase;
+    transition: background 160ms ease;
+  }
+
+  .contact-email:hover { background: var(--matcha-darker); }
+
+  .contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    margin-top: 28px;
+  }
+
+  .form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+  }
+
+  .field {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .field label {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;
+    font-size: 13px;
+    letter-spacing: 0.04em;
+    color: var(--ink);
+    text-transform: lowercase;
+  }
+
+  .field input,
+  .field textarea {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+    font-size: 15px;
+    color: var(--ink);
+    background: transparent;
+    border: none;
+    border-bottom: 2px solid rgba(122, 154, 106, 0.45);
+    border-radius: 0;
+    padding: 8px 2px;
+    outline: none;
+    transition: border-color 160ms ease;
+    text-transform: lowercase;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .field textarea {
+    resize: vertical;
+    min-height: 110px;
+    border: 2px solid rgba(122, 154, 106, 0.45);
+    border-radius: 10px;
+    padding: 12px 14px;
+  }
+
+  .field input:focus,
+  .field textarea:focus {
+    border-color: var(--matcha-deep);
+  }
+
+  .field input::placeholder,
+  .field textarea::placeholder {
+    color: rgba(74, 71, 64, 0.4);
+    font-weight: 400;
+  }
+
+  .form-submit {
+    align-self: flex-start;
+    margin-top: 8px;
+    padding: 11px 22px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    color: #ffffff;
+    background: var(--matcha);
+    border: 1px solid var(--matcha);
+    border-radius: 8px;
+    cursor: pointer;
+    text-transform: lowercase;
+    transition: background 160ms ease, border-color 160ms ease;
+  }
+
+  .form-submit:hover {
+    background: var(--matcha-darker);
+    border-color: var(--matcha-darker);
+  }
+  .form-submit:disabled { opacity: 0.6; cursor: not-allowed; }
+
+  .form-status {
+    font-family: 'Times New Roman', Times, serif;
+    font-style: italic;
+    font-size: 14px;
+    color: var(--matcha-deep);
+    min-height: 1.4em;
+  }
+
+  .contact-card {
+    background: var(--matcha-deep);
+    border: 3px solid #ffffff;
+    border-radius: 14px;
+    padding: 28px;
+    color: #ffffff;
+    box-shadow: 0 18px 40px -22px rgba(59, 84, 50, 0.45);
+  }
+
+  .contact-card h3 {
+    font-family: 'Times New Roman', Times, serif;
+    font-style: italic;
+    font-weight: 400;
+    font-size: 18px;
+    margin: 0 0 16px;
+    color: #c8e0b8;
+  }
+
+  .contact-list {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .contact-list a {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 12px 4px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 15px;
+    font-weight: 500;
+    color: #ffffff;
+    text-decoration: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+    transition: color 160ms ease, padding 160ms ease;
+  }
+
+  .contact-list li:last-child a { border-bottom: 0; }
+
+  .contact-list a:hover {
+    color: #c8e0b8;
+    padding-left: 8px;
+  }
+
+  .contact-list .label {
+    font-family: 'Times New Roman', Times, serif;
+    font-style: italic;
+    font-weight: 400;
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.6);
+    margin-right: 16px;
+  }
+
+  .contact-list .arrow {
+    opacity: 0.6;
+    transition: transform 160ms ease, opacity 160ms ease;
+  }
+
+  .contact-list a:hover .arrow {
+    transform: translateX(4px);
+    opacity: 1;
+  }
+
+  @media (max-width: 860px) {
+    .contact-grid { grid-template-columns: 1fr; gap: 32px; }
+  }
+
+  @media (max-width: 720px) {
+    .nav-wrap { width: 92%; top: 16px; margin-top: 16px; }
+    .nav-wrap.is-scrolled { width: 92%; }
+    main { width: 92%; }
+    .nav-links a { padding: 8px 10px; font-size: 13px; }
+    .brand { display: none; }
+  }
+</style>
+</head>
+<body>
+  <div class="nav-wrap" id="navWrap" data-screen-label="Navbar">
+    <span id="top" aria-hidden="true"></span>
+    <nav class="navbar" aria-label="Primary">
+      <a href="#top" class="brand" aria-label="Back to top">
+        <span>JD</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="#about">about me</a></li>
+        <li><a href="#resume">resume</a></li>
+      </ul>
+      <a href="#contact" class="nav-cta">contact me</a>
+    </nav>
+  </div>
+
+  <main>
+    <div class="hero-section">
+      <h1 class="hero">
+        <span class="hero-line">im <span class="hl hl-blue caps">jason dang</span></span>
+        <span class="hero-line">a 10x</span>
+        <span class="hero-line">software</span>
+        <span class="hero-line"><span class="hl hl-red caps">engineer</span></span>
+      </h1>
+      <div class="headshot-wrap">
+        <img class="headshot" src="assets/headshot.jpg" alt="Jason Dang headshot" />
+      </div>
+    </div>
+
+    <section class="about" id="about" data-screen-label="About">
+      <div class="about-eyebrow" aria-hidden="true">
+        <span class="dash"></span>
+      </div>
+      <h2 class="about-title">a little <span class="accent">about</span> who i am</h2>
+      <div class="about-grid">
+        <div class="about-body">
+          <p>im a software engineer with a degree in computer science from <strong>ut dallas</strong>. i spent time building at <strong>paycom</strong> as a <strong>software engineer</strong> and worked as an <strong>ai engineer</strong> and <strong>data analyst</strong> at <strong>at&amp;t</strong>. the best part of the job for me is the challenge. i love that moment of solving a problem after being stuck on it for a while.</p>
+          <p>when im not at my desk, im travelling the world with my camera. i love <strong>videography</strong> and record <strong>cinematic vlogs</strong> of wherever i travel to. im also a huge foodie and will travel the world just to try a viral restaurant i see on social media. if you want to see some of my videos check out my <a href="https://www.youtube.com/@jasonddang" target="_blank" rel="noopener noreferrer"><svg class="yt-icon" viewBox="0 0 24 24" aria-hidden="true"><path fill="#FF0000" d="M23.5 6.2a3 3 0 0 0-2.1-2.12C19.6 3.6 12 3.6 12 3.6s-7.6 0-9.4.48A3 3 0 0 0 .5 6.2 31.4 31.4 0 0 0 0 12a31.4 31.4 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.12C4.4 20.4 12 20.4 12 20.4s7.6 0 9.4-.48a3 3 0 0 0 2.1-2.12A31.4 31.4 0 0 0 24 12a31.4 31.4 0 0 0-.5-5.8z"/><path fill="#ffffff" d="M9.6 15.6V8.4l6.3 3.6-6.3 3.6z"/></svg><span>youtube!</span></a></p>
+        </div>
+        <aside class="about-card">
+          <h3>quick facts</h3>
+          <dl>
+            <dt>based in</dt><dd>dallas, tx</dd>
+            <dt>focus</dt><dd>ai &amp; full-stack</dd>
+            <dt>currently</dt><dd>funemployed</dd>
+          </dl>
+        </aside>
+      </div>
+    </section>
+
+    <section class="resume" id="resume" data-screen-label="Resume">
+      <div class="about-eyebrow" aria-hidden="true">
+        <span class="dash"></span>
+      </div>
+      <div class="resume-head">
+        <h2 class="resume-title">my <span class="accent">resume</span></h2>
+        <div class="resume-actions">
+          <a class="resume-btn ghost" href="assets/Jason_Dang_Resume.pdf" target="_blank" rel="noopener noreferrer">open in new tab</a>
+          <a class="resume-btn" href="assets/Jason_Dang_Resume.pdf" download="Jason_Dang_Resume.pdf">download pdf</a>
+        </div>
+      </div>
+      <div class="resume-frame-wrap">
+        <iframe class="resume-frame" src="assets/Jason_Dang_Resume.pdf#view=FitH" title="Jason Dang resume"></iframe>
+      </div>
+    </section>
+
+    <section class="contact" id="contact" data-screen-label="Contact">
+      <div class="about-eyebrow" aria-hidden="true">
+        <span class="dash"></span>
+      </div>
+      <div class="contact-grid">
+        <div>
+          <h2 class="contact-title">lets <span class="accent">build</span> something</h2>
+          <p class="contact-lede">have a project in mind, want to chat about engineering, or just want to swap restaurant recs? drop me a line below.</p>
+          <form class="contact-form" id="contactForm" novalidate>
+            <div class="form-row">
+              <div class="field">
+                <label for="cf-name">name</label>
+                <input id="cf-name" name="name" type="text" placeholder="your name" required />
+              </div>
+              <div class="field">
+                <label for="cf-email">email</label>
+                <input id="cf-email" name="email" type="email" placeholder="you@example.com" required />
+              </div>
+            </div>
+            <div class="field">
+              <label for="cf-subject">subject</label>
+              <input id="cf-subject" name="subject" type="text" placeholder="whats this about" />
+            </div>
+            <div class="field">
+              <label for="cf-message">message</label>
+              <textarea id="cf-message" name="message" placeholder="tell me a bit about what youre working on..." required></textarea>
+            </div>
+            <button class="form-submit" type="submit">send message</button>
+            <div class="form-status" id="cf-status" role="status" aria-live="polite"></div>
+          </form>
+        </div>
+        <aside class="contact-card">
+          <h3>find me elsewhere</h3>
+          <ul class="contact-list">
+            <li><a href="https://www.linkedin.com/in/jasonddang" target="_blank" rel="noopener noreferrer"><span><span class="label">in /</span>linkedin</span><span class="arrow">→</span></a></li>
+            <li><a href="https://github.com/Jasoonii" target="_blank" rel="noopener noreferrer"><span><span class="label">gh /</span>github</span><span class="arrow">→</span></a></li>
+            <li><a href="https://www.youtube.com/@jasonddang" target="_blank" rel="noopener noreferrer"><span><span class="label">yt /</span>youtube</span><span class="arrow">→</span></a></li>
+          </ul>
+        </aside>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    // shrink the navbar after a small scroll threshold
+    (function () {
+      var nav = document.getElementById('navWrap');
+      var THRESHOLD = 40;
+      var ticking = false;
+
+      function update() {
+        if (window.scrollY > THRESHOLD) {
+          nav.classList.add('is-scrolled');
+        } else {
+          nav.classList.remove('is-scrolled');
+        }
+        ticking = false;
+      }
+
+      window.addEventListener('scroll', function () {
+        if (!ticking) {
+          window.requestAnimationFrame(update);
+          ticking = true;
+        }
+      }, { passive: true });
+
+      update();
+    })();
+
+    // smooth scroll for in-page nav links
+    document.querySelectorAll('.nav-links a[href^="#"], .nav-cta[href^="#"]').forEach(function (link) {
+      link.addEventListener('click', function (e) {
+        var id = link.getAttribute('href').slice(1);
+        var target = document.getElementById(id);
+        if (!target) return;
+        e.preventDefault();
+        var top = target.getBoundingClientRect().top + window.scrollY - 110;
+        window.scrollTo({ top: top, behavior: 'smooth' });
+      });
+    });
+
+    // contact form (front-end only — wire up to a backend like formspree/resend on deploy)
+    var form = document.getElementById('contactForm');
+    if (form) {
+      var status = document.getElementById('cf-status');
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        var name = form.querySelector('#cf-name').value.trim();
+        var email = form.querySelector('#cf-email').value.trim();
+        var msg = form.querySelector('#cf-message').value.trim();
+        if (!name || !email || !msg) {
+          status.style.color = '#b04a3e';
+          status.textContent = 'please fill in name, email, and message.';
+          return;
+        }
+        var btn = form.querySelector('.form-submit');
+        btn.disabled = true;
+        btn.textContent = 'sending...';
+        setTimeout(function () {
+          form.reset();
+          btn.disabled = false;
+          btn.textContent = 'send message';
+          status.style.color = '';
+          status.textContent = 'thanks ' + name.split(' ')[0] + '! ill get back to you soon.';
+        }, 700);
+      });
+    }
+
+    // smooth scroll to top when JD logo is clicked
+    document.querySelectorAll('a.brand').forEach(function (el) {
+      el.addEventListener('click', function (e) {
+        e.preventDefault();
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+    });
+  </script>
+</body>
+</html>
