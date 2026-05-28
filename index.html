@@ -305,7 +305,6 @@
             // Handle contact form submission via AJAX
             var form = document.getElementById("contactForm");
             if (form) {
-                var status = document.getElementById("cf-status");
                 var btn = form.querySelector(".form-submit");
 
                 form.addEventListener("submit", function (e) {
@@ -313,6 +312,7 @@
                     e.preventDefault();
 
                     // 2. Extract the form data
+                    var status = document.getElementById("cf-status");
                     var data = new FormData(form);
 
                     // 3. Update UI to a "loading" state
