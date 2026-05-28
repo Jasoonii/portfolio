@@ -191,7 +191,7 @@
                             have a project in mind, want to chat about engineering, or just want to swap restaurant
                             recs? contact me below. (not setup currently)
                         </p>
-                        <form class="contact-form" id="contactForm" novalidate>
+                        <form class="contact-form" id="contactForm" action="https://formspree.io/f/mnjrlybj" method="post">
                             <div class="form-row">
                                 <div class="field">
                                     <label for="cf-name">name</label>
@@ -293,33 +293,6 @@
                     window.scrollTo({ top: top, behavior: "smooth" });
                 });
             });
-
-            // contact form (front-end only — wire up to a backend like formspree/resend on deploy)
-            var form = document.getElementById("contactForm");
-            if (form) {
-                var status = document.getElementById("cf-status");
-                form.addEventListener("submit", function (e) {
-                    e.preventDefault();
-                    var name = form.querySelector("#cf-name").value.trim();
-                    var email = form.querySelector("#cf-email").value.trim();
-                    var msg = form.querySelector("#cf-message").value.trim();
-                    if (!name || !email || !msg) {
-                        status.style.color = "#b04a3e";
-                        status.textContent = "please fill in name, email, and message.";
-                        return;
-                    }
-                    var btn = form.querySelector(".form-submit");
-                    btn.disabled = true;
-                    btn.textContent = "sending...";
-                    setTimeout(function () {
-                        form.reset();
-                        btn.disabled = false;
-                        btn.textContent = "send message";
-                        status.style.color = "";
-                        status.textContent = "thanks " + name.split(" ")[0] + "! ill get back to you soon.";
-                    }, 700);
-                });
-            }
 
             // smooth scroll to top when JD logo is clicked
             document.querySelectorAll("a.brand").forEach(function (el) {
